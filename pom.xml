@@ -58,9 +58,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.9.0</version> <!-- Specify the version you want -->
            <configuration>
-                <source>17</source>
-                <target>17</target>
-                   
+               
     <release>13</release>
 
                 <!-- Other compiler configuration options if needed -->
