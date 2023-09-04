@@ -16,6 +16,18 @@ pipeline {
              bat "mvn install"
                 echo 'Build complete'
             }
+            post{
+                success{
+                    echo "Archieve";
+                    archiveArtifacts artifacts: '**/target/*.jar'
+                }
+            }
+        }
+        stage('Deploy'){
+            steps{
+                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:9090/')], contextPath: null, war: '**/*.jar'
+            }
+            
         }
     }
 } 
