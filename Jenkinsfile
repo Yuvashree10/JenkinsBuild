@@ -19,13 +19,13 @@ pipeline {
             post{
                 success{
                     echo "Archieve";
-                    archiveArtifacts artifacts: '**/target/*.jar'
+                    archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
         }
         stage('Deploy'){
             steps{
-                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:9090/')], contextPath: null, war: '**/*.jar'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:9090/')], contextPath: null, war: '**/*.war'
             }
             
         }
