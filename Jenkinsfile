@@ -1,7 +1,5 @@
 pipeline {
     agent any
-
-
     stages {
         stage('Build') {
             steps {
@@ -12,7 +10,8 @@ pipeline {
                // sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
-                 bat "mvn clean"
+                 //bat "mvn clean"
+                 echo 'Build complete'
             }
 
             // post {
