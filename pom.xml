@@ -56,7 +56,7 @@
                   <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.9.4</version> <!-- Specify the version you want -->
+            <version>3.9.0</version> <!-- Specify the version you want -->
            <configuration>
                 <source>17</source>
                 <target>17</target>
