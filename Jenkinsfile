@@ -16,19 +16,19 @@ pipeline {
              bat "mvn install"
                 echo 'Build complete'
             }
-            post{
-                success{
-                    echo "Archieve";
-                    archiveArtifacts artifacts: '**/target/*.war'
-                }
-            }
+            // post{
+            //     success{
+            //         echo "Archieve";
+            //         archiveArtifacts artifacts: '**/target/*.war'
+            //     }
+            // }
         }
-        stage('Deploy'){
-            steps{
-                deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:9090/')], contextPath: null, war: '**/*.war'
-            }
+        // stage('Deploy'){
+        //     steps{
+        //         deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://localhost:9090/')], contextPath: null, war: '**/*.war'
+        //     }
             
-        }
+        // }
     }
 } 
 
