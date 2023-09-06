@@ -5,6 +5,14 @@ pipeline {
     }
 
     stages {
+        script {
+            // Check if new commits exist
+                    def hasCommits = sh(returnStatus: true, script: 'git log origin/master..HEAD')
+                    if (hasCommits == 0) {
+                        echo "No new commits found."
+                    } else {
+                        echo "New commits found. Triggering further actions..."
+                        
         stage('Stage') {
             steps {
              bat "mvn clean"
@@ -30,7 +38,8 @@ pipeline {
             
         }
        
-        
+                    }
+        }
     }
      post{
             success{
