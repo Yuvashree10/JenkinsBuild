@@ -8,20 +8,27 @@ pipeline {
         stage('Stage') {
             steps {
              bat "mvn clean"
-                echo 'Build start'
+                echo 'Build started'
             }
         }
      stage('Build') {
             steps {
              bat "mvn install"
-                echo 'Build complete'
+                echo 'Build completed'
+            }
+          
+        }
+        stage('Test') {
+            steps {
+             bat "mvn test"
+                echo 'Test completed'
             }
           
         }
         stage('Deploy'){
             steps{
                 deploy adapters: [tomcat9(credentialsId: 'Tomcat', path: '', url: 'http://localhost:8282/')], contextPath: null, war: '**/*.war'            }
-            
+             echo 'Deployment completed'
         }
     }
       post{
