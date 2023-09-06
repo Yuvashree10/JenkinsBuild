@@ -29,6 +29,12 @@ pipeline {
             }
             
         }
+        post{
+            success{
+                echo "success $BUILD_URL"
+            }
+        }
+        
     }
 } 
 
