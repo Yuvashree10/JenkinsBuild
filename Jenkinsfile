@@ -27,8 +27,10 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-                deploy adapters: [tomcat9(credentialsId: 'Tomcat', path: '', url: 'http://localhost:8282/')], contextPath: null, war: '**/*.war'            }
-             echo 'Deployment completed'
+                deploy adapters: [tomcat9(credentialsId: 'Tomcat', path: '', url: 'http://localhost:8282/')], contextPath: null, war: '**/*.war' 
+                echo 'Deployment completed'
+            }
+             
         }
     }
       post{
