@@ -29,13 +29,14 @@ pipeline {
             }
             
         }
-        post{
+       
+        
+    }
+     post{
             success{
                 echo "success $BUILD_URL"
             }
         }
-        
-    }
 } 
 
 // pipeline {
