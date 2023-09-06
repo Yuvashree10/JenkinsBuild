@@ -16,12 +16,7 @@ pipeline {
              bat "mvn install"
                 echo 'Build complete'
             }
-            post{
-                success{
-                    echo "Archieve";
-                    archiveArtifacts artifacts: '**/target/*.war'
-                }
-            }
+          
         }
         stage('Deploy'){
             steps{
