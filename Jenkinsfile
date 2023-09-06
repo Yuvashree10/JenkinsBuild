@@ -1,7 +1,7 @@
 pipeline {
     agent any
     triggers {
-        pollSCM('* * * * *') // Poll the SCM (Git) every minute
+        pollSCM('* * * * *') // Poll the SCM (Git) every minut
     }
     tools{
      maven 'Maven2'
