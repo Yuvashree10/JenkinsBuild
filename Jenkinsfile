@@ -24,6 +24,12 @@ pipeline {
             
         }
     }
+      post{
+                success{
+                    echo "Your Application Deployed Successfully";
+                    //archiveArtifacts artifacts: '**/target/*.war'
+                }
+            }
 } 
 
 // pipeline {
